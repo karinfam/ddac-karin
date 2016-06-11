@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="edd48ebe045f4bf0b41b287619e1d486" Name="Diagram1">
+        <EntityTypeShape EntityType="DDACModelEntities.Customer" Width="1.5" PointX="8.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DDACModelEntities.Fleet" Width="1.5" PointX="5.75" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DDACModelEntities.Schedule" Width="1.5" PointX="10.875" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DDACModelEntities.Ship" Width="1.5" PointX="8.125" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DDACModelEntities.Shipment" Width="1.5" PointX="8.25" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DDACModelEntities.UserLogin" Width="1.5" PointX="5.625" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DDACModelEntities.Yard" Width="1.5" PointX="11" PointY="4.125" IsExpanded="true" />
+        <AssociationConnector Association="DDACModelEntities.FK__Shipment__Custom__1FCDBCEB" ManuallyRouted="false" />
+        <AssociationConnector Association="DDACModelEntities.FK__Ship__FleetID__1CF15040" ManuallyRouted="false" />
+        <AssociationConnector Association="DDACModelEntities.FK__Schedule__ShipID__1BFD2C07" ManuallyRouted="false" />
+        <AssociationConnector Association="DDACModelEntities.FK__Shipment__ShipID__1DE57479" ManuallyRouted="false" />
+        <AssociationConnector Association="DDACModelEntities.FK__Shipment__YardID__1ED998B2" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

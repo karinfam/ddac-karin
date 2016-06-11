@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DDACModelEntities" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+    </Key>
+    <Property Name="CustomerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Company" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Contact" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Shipments" Relationship="Self.FK__Shipment__Custom__1FCDBCEB" FromRole="Customer" ToRole="Shipment" />
+  </EntityType>
+  <EntityType Name="Fleet">
+    <Key>
+      <PropertyRef Name="FleetID" />
+    </Key>
+    <Property Name="FleetID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Ships" Relationship="Self.FK__Ship__FleetID__1CF15040" FromRole="Fleet" ToRole="Ship" />
+  </EntityType>
+  <EntityType Name="Schedule">
+    <Key>
+      <PropertyRef Name="ScheduleID" />
+    </Key>
+    <Property Name="ScheduleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Destination" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="DepartureDateTime" Type="DateTime" Precision="3" />
+    <Property Name="ArrivalDateTime" Type="DateTime" Precision="3" />
+    <Property Name="ShipID" Type="Int32" />
+    <NavigationProperty Name="Ship" Relationship="Self.FK__Schedule__ShipID__1BFD2C07" FromRole="Schedule" ToRole="Ship" />
+  </EntityType>
+  <EntityType Name="Ship">
+    <Key>
+      <PropertyRef Name="ShipID" />
+    </Key>
+    <Property Name="ShipID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MaxLoad" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FleetID" Type="Int32" />
+    <NavigationProperty Name="Fleet" Relationship="Self.FK__Ship__FleetID__1CF15040" FromRole="Ship" ToRole="Fleet" />
+    <NavigationProperty Name="Schedules" Relationship="Self.FK__Schedule__ShipID__1BFD2C07" FromRole="Ship" ToRole="Schedule" />
+    <NavigationProperty Name="Shipments" Relationship="Self.FK__Shipment__ShipID__1DE57479" FromRole="Ship" ToRole="Shipment" />
+  </EntityType>
+  <EntityType Name="Shipment">
+    <Key>
+      <PropertyRef Name="ShipmentID" />
+    </Key>
+    <Property Name="ShipmentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Type" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="InsuredValue" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Weight" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Destination" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ShipID" Type="Int32" />
+    <Property Name="YardID" Type="Int32" />
+    <Property Name="CustomerID" Type="Int32" />
+    <NavigationProperty Name="Customer" Relationship="Self.FK__Shipment__Custom__1FCDBCEB" FromRole="Shipment" ToRole="Customer" />
+    <NavigationProperty Name="Ship" Relationship="Self.FK__Shipment__ShipID__1DE57479" FromRole="Shipment" ToRole="Ship" />
+    <NavigationProperty Name="Yard" Relationship="Self.FK__Shipment__YardID__1ED998B2" FromRole="Shipment" ToRole="Yard" />
+  </EntityType>
+  <EntityType Name="UserLogin">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Username" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Role" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Yard">
+    <Key>
+      <PropertyRef Name="YardID" />
+    </Key>
+    <Property Name="YardID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="YardName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Port" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Shipments" Relationship="Self.FK__Shipment__YardID__1ED998B2" FromRole="Yard" ToRole="Shipment" />
+  </EntityType>
+  <Association Name="FK__Shipment__Custom__1FCDBCEB">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+    <End Role="Shipment" Type="Self.Shipment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="Shipment">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Ship__FleetID__1CF15040">
+    <End Role="Fleet" Type="Self.Fleet" Multiplicity="0..1" />
+    <End Role="Ship" Type="Self.Ship" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fleet">
+        <PropertyRef Name="FleetID" />
+      </Principal>
+      <Dependent Role="Ship">
+        <PropertyRef Name="FleetID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Schedule__ShipID__1BFD2C07">
+    <End Role="Ship" Type="Self.Ship" Multiplicity="0..1" />
+    <End Role="Schedule" Type="Self.Schedule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ship">
+        <PropertyRef Name="ShipID" />
+      </Principal>
+      <Dependent Role="Schedule">
+        <PropertyRef Name="ShipID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Shipment__ShipID__1DE57479">
+    <End Role="Ship" Type="Self.Ship" Multiplicity="0..1" />
+    <End Role="Shipment" Type="Self.Shipment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ship">
+        <PropertyRef Name="ShipID" />
+      </Principal>
+      <Dependent Role="Shipment">
+        <PropertyRef Name="ShipID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Shipment__YardID__1ED998B2">
+    <End Role="Yard" Type="Self.Yard" Multiplicity="0..1" />
+    <End Role="Shipment" Type="Self.Shipment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Yard">
+        <PropertyRef Name="YardID" />
+      </Principal>
+      <Dependent Role="Shipment">
+        <PropertyRef Name="YardID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DDACEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Customers" EntityType="Self.Customer" />
+    <EntitySet Name="Fleets" EntityType="Self.Fleet" />
+    <EntitySet Name="Schedules" EntityType="Self.Schedule" />
+    <EntitySet Name="Ships" EntityType="Self.Ship" />
+    <EntitySet Name="Shipments" EntityType="Self.Shipment" />
+    <EntitySet Name="UserLogins" EntityType="Self.UserLogin" />
+    <EntitySet Name="Yards" EntityType="Self.Yard" />
+    <AssociationSet Name="FK__Shipment__Custom__1FCDBCEB" Association="Self.FK__Shipment__Custom__1FCDBCEB">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="Shipment" EntitySet="Shipments" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Ship__FleetID__1CF15040" Association="Self.FK__Ship__FleetID__1CF15040">
+      <End Role="Fleet" EntitySet="Fleets" />
+      <End Role="Ship" EntitySet="Ships" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Schedule__ShipID__1BFD2C07" Association="Self.FK__Schedule__ShipID__1BFD2C07">
+      <End Role="Ship" EntitySet="Ships" />
+      <End Role="Schedule" EntitySet="Schedules" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Shipment__ShipID__1DE57479" Association="Self.FK__Shipment__ShipID__1DE57479">
+      <End Role="Ship" EntitySet="Ships" />
+      <End Role="Shipment" EntitySet="Shipments" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Shipment__YardID__1ED998B2" Association="Self.FK__Shipment__YardID__1ED998B2">
+      <End Role="Yard" EntitySet="Yards" />
+      <End Role="Shipment" EntitySet="Shipments" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
