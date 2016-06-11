@@ -39,7 +39,7 @@ namespace DDAC.Controllers
         // GET: Schedules/Create
         public ActionResult Create()
         {
-            ViewBag.ShipID = new SelectList(db.Ships, "ShipID", "MaxLoad");
+            ViewBag.ShipID = new SelectList(db.Ships, "ShipID", "ShipID");
             return View();
         }
 
@@ -57,7 +57,7 @@ namespace DDAC.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.ShipID = new SelectList(db.Ships, "ShipID", "MaxLoad", schedule.ShipID);
+            ViewBag.ShipID = new SelectList(db.Ships, "ShipID", "ShipID", schedule.ShipID);
             return View(schedule);
         }
 
@@ -73,7 +73,7 @@ namespace DDAC.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.ShipID = new SelectList(db.Ships, "ShipID", "MaxLoad", schedule.ShipID);
+            ViewBag.ShipID = new SelectList(db.Ships, "ShipID", "ShipID", schedule.ShipID);
             return View(schedule);
         }
 
@@ -90,7 +90,7 @@ namespace DDAC.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.ShipID = new SelectList(db.Ships, "ShipID", "MaxLoad", schedule.ShipID);
+            ViewBag.ShipID = new SelectList(db.Ships, "ShipID", "ShipID", schedule.ShipID);
             return View(schedule);
         }
 

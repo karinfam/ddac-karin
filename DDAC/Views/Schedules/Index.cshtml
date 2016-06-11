@@ -21,7 +21,7 @@
             @Html.DisplayNameFor(model => model.ArrivalDateTime)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Ship.MaxLoad)
+            @Html.DisplayNameFor(model => model.ShipID)
         </th>
         <th></th>
     </tr>
@@ -38,7 +38,7 @@
             @Html.DisplayFor(modelItem => item.ArrivalDateTime)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Ship.MaxLoad)
+            @Html.DisplayFor(modelItem => item.ShipID)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ScheduleID }) |
