@@ -26,5 +26,18 @@ namespace DDAC.Controllers
 
             return View();
         }
+        public ActionResult MaerskHome()
+        {
+            ViewBag.Message = "Maersk login page.";
+
+            return View();
+        }
+        public ActionResult AgentHome()
+        {
+            ViewBag.Message = "Agent login page.";
+
+            return View();
+        }
+
     }
 }
