@@ -1,4 +1,20 @@
-﻿body {
+﻿@font-face {
+font-family: leagueGothic;
+src: url(../fonts/leaguegothic-condensed-italic-webfont.woff);
+font-weight: lighter;
+}
+
+@font-face {
+font-family: leagueGothic;
+src: url(../fonts/leaguegothic-italic-webfont.woff);
+font-style:italic;
+}
+@font-face {
+font-family: leagueGothic;
+src: url(../fonts/leaguegothic-regular-webfont.woff);
+}
+
+body {
     padding-top: 50px;
     padding-bottom: 20px;
 }
@@ -21,4 +37,38 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+
+.color-segment{
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+.page-header {
+    font-family:leagueGothic;
+    font-size:120px;
+    font-style:italic;
+}
+
+#page-subheader {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size:50px;
+}
+
+.jumbotron {
+background: linear-gradient(to right, #5A3F37 , #2C7744);
+color: white;
+}
+
+.vertical-center {
+display:flex;
+align-items:center;
+
+}
+
+.navbar {
+background-color: transparent;
+border:transparent;
+color: black;
 }
