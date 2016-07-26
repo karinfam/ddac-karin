@@ -51,7 +51,7 @@ textarea {
     font-style:italic;
 }
 
-#page-subheader {
+p.pagesubheader {
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     font-size:50px;
 }

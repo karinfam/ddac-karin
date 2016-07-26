@@ -158,8 +158,11 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SchedulesController.cs" />
+    <Compile Include="Controllers\ShipmentsController.cs" />
+    <Compile Include="Controllers\YardsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -269,6 +272,21 @@
     <Content Include="Views\Schedules\Index.cshtml" />
     <Content Include="Views\Home\MaerskHome.cshtml" />
     <Content Include="Views\Home\AgentHome.cshtml" />
+    <Content Include="Views\Yards\Create.cshtml" />
+    <Content Include="Views\Yards\Delete.cshtml" />
+    <Content Include="Views\Yards\Details.cshtml" />
+    <Content Include="Views\Yards\Edit.cshtml" />
+    <Content Include="Views\Yards\Index.cshtml" />
+    <Content Include="Views\Shipments\Create.cshtml" />
+    <Content Include="Views\Shipments\Delete.cshtml" />
+    <Content Include="Views\Shipments\Details.cshtml" />
+    <Content Include="Views\Shipments\Edit.cshtml" />
+    <Content Include="Views\Shipments\Index.cshtml" />
+    <Content Include="Views\Customers\Create.cshtml" />
+    <Content Include="Views\Customers\Delete.cshtml" />
+    <Content Include="Views\Customers\Details.cshtml" />
+    <Content Include="Views\Customers\Edit.cshtml" />
+    <Content Include="Views\Customers\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

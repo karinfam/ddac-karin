@@ -2,6 +2,9 @@
 @{
     ViewBag.Title = "AgentHome";
 }
+<p class="pagesubheader">Agent Menu</p>
 
-<h2>@ViewBag.Message</h2>
 
+<p>@Html.ActionLink("Shipping Schedules", "Index", "Schedules", null, new { @class = "btn btn-primary btn-large" }) </p>
+<p>@Html.ActionLink("Shipment Overview", "Index", "Shipments", null, new { @class = "btn btn-primary btn-large" })</p>
+<p>@Html.ActionLink("Customer Overview", "Index", "Customers", null, new { @class = "btn btn-primary btn-large" })</p>
