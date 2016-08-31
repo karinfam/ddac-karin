@@ -23,6 +23,8 @@
 @foreach (var item in Model) {
     <tr>
         <td>
+            @*@Html.ActionLink(item.YardName, "Index", "Shipments")*@
+
             @Html.DisplayFor(modelItem => item.YardName)
         </td>
         <td>

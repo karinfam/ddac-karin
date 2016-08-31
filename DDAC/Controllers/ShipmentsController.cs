@@ -15,9 +15,21 @@ namespace DDAC.Controllers
         private DDACEntities db = new DDACEntities();
 
         // GET: Shipments
-        public ActionResult Index()
+        //public ActionResult Index()
+        //{
+        //    var shipments = db.Shipments.Include(s => s.Customer).Include(s => s.Ship).Include(s => s.Yard);
+        //    return View(shipments.ToList());
+        //}
+
+        public ActionResult Index(int? SelectedYard)
         {
-            var shipments = db.Shipments.Include(s => s.Customer).Include(s => s.Ship).Include(s => s.Yard);
+            var yards = db.Yards.ToList();
+            ViewBag.SelectedYard = new SelectList(yards, "YardID", "YardName", SelectedYard);
+            int yardID = SelectedYard.GetValueOrDefault();
+            //var shipments = db.Shipments.Include(s => s.Customer).Include(s => s.Ship).Include(s => s.Yard);
+            IQueryable<Shipment> shipments = db.Shipments
+                            .Where(s=> !SelectedYard.HasValue||s.YardID==yardID)
+                            .Include(s => s.Customer).Include(s => s.Ship).Include(s => s.Yard);
             return View(shipments.ToList());
         }
 

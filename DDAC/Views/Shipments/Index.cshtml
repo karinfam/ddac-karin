@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<DDAC.Models.Shipment>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Shipments Index";
 }
 
 <h2>Index</h2>
@@ -9,6 +9,14 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+
+@using (Html.BeginForm())
+{
+    <p>
+        Select Yard: @Html.DropDownList("SelectedYard", "All")
+        <input type="submit" value="Filter" />
+    </p>
+}
 <table class="table">
     <tr>
         <th>
