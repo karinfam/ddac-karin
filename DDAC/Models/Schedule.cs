@@ -11,12 +11,16 @@ namespace DDAC.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class Schedule
     {
         public int ScheduleID { get; set; }
         public string Destination { get; set; }
+
+        [DataType(DataType.Date)]
         public Nullable<System.DateTime> DepartureDateTime { get; set; }
+        [DataType(DataType.Date)]
         public Nullable<System.DateTime> ArrivalDateTime { get; set; }
         public Nullable<int> ShipID { get; set; }
     
