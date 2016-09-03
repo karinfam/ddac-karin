@@ -11,7 +11,7 @@ namespace DDAC.Controllers
 {
     public class AccountController : Controller
     {
-        public void SignIn(string redirectUrl)
+        public void SignIn(string redirectUri)
         {
             // Send an OpenID Connect sign-in request.
             //if (!Request.IsAuthenticated)
@@ -19,11 +19,11 @@ namespace DDAC.Controllers
             //    HttpContext.GetOwinContext().Authentication.Challenge(new AuthenticationProperties { RedirectUri = "/" },
             //        OpenIdConnectAuthenticationDefaults.AuthenticationType);
             //}
-            if (redirectUrl == null)
-                redirectUrl = "/";
+            if (redirectUri == null)
+                redirectUri = "/";
 
             HttpContext.GetOwinContext()
-                .Authentication.Challenge(new AuthenticationProperties { RedirectUri = redirectUrl },
+                .Authentication.Challenge(new AuthenticationProperties { RedirectUri = redirectUri },
                     OpenIdConnectAuthenticationDefaults.AuthenticationType);
         }
 
