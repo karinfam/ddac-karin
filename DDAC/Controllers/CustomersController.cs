@@ -46,7 +46,7 @@ namespace DDAC.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "CustomerID,Name,Company,Contact")] Customer customer)
+        public ActionResult Create([Bind(Include = "CustomerID,Name,Company,Contact,PrepaidCredit")] Customer customer)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace DDAC.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "CustomerID,Name,Company,Contact")] Customer customer)
+        public ActionResult Edit([Bind(Include = "CustomerID,Name,Company,Contact,PrepaidCredit")] Customer customer)
         {
             if (ModelState.IsValid)
             {

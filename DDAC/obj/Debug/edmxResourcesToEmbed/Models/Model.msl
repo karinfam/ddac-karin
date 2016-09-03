@@ -4,6 +4,7 @@
     <EntitySetMapping Name="Customers">
       <EntityTypeMapping TypeName="DDACModelEntities.Customer">
         <MappingFragment StoreEntitySet="Customer">
+          <ScalarProperty Name="PrepaidCredit" ColumnName="PrepaidCredit" />
           <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Company" ColumnName="Company" />

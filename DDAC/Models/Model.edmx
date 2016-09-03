@@ -4,7 +4,17 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DDACModelEntities.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="DDACModelEntities.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+          <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+        </EntityType>
         <EntityType Name="Customer">
           <Key>
             <PropertyRef Name="CustomerID" />
@@ -13,6 +23,7 @@
           <Property Name="Name" Type="varchar(max)" />
           <Property Name="Company" Type="varchar(max)" />
           <Property Name="Contact" Type="varchar(max)" />
+          <Property Name="PrepaidCredit" Type="int" />
         </EntityType>
         <EntityType Name="Fleet">
           <Key>
@@ -71,7 +82,7 @@
           <Property Name="YardName" Type="varchar(max)" />
           <Property Name="Port" Type="varchar(max)" />
         </EntityType>
-        <Association Name="FK__Schedule__ShipID__1BFD2C07">
+        <Association Name="FK__Schedule__ShipID__4222D4EF">
           <End Role="Ship" Type="Self.Ship" Multiplicity="0..1" />
           <End Role="Schedule" Type="Self.Schedule" Multiplicity="*" />
           <ReferentialConstraint>
@@ -83,7 +94,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Ship__FleetID__1CF15040">
+        <Association Name="FK__Ship__FleetID__4316F928">
           <End Role="Fleet" Type="Self.Fleet" Multiplicity="0..1" />
           <End Role="Ship" Type="Self.Ship" Multiplicity="*" />
           <ReferentialConstraint>
@@ -95,7 +106,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Shipment__Custom__1FCDBCEB">
+        <Association Name="FK__Shipment__Custom__440B1D61">
           <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
           <End Role="Shipment" Type="Self.Shipment" Multiplicity="*" />
           <ReferentialConstraint>
@@ -107,7 +118,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Shipment__ShipID__1DE57479">
+        <Association Name="FK__Shipment__ShipID__44FF419A">
           <End Role="Ship" Type="Self.Ship" Multiplicity="0..1" />
           <End Role="Shipment" Type="Self.Shipment" Multiplicity="*" />
           <ReferentialConstraint>
@@ -119,7 +130,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Shipment__YardID__1ED998B2">
+        <Association Name="FK__Shipment__YardID__45F365D3">
           <End Role="Yard" Type="Self.Yard" Multiplicity="0..1" />
           <End Role="Shipment" Type="Self.Shipment" Multiplicity="*" />
           <ReferentialConstraint>
@@ -132,6 +143,7 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="DDACModelEntitiesStoreContainer">
+          <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Fleet" EntityType="Self.Fleet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Schedule" EntityType="Self.Schedule" Schema="dbo" store:Type="Tables" />
@@ -139,29 +151,28 @@
           <EntitySet Name="Shipment" EntityType="Self.Shipment" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserLogin" EntityType="Self.UserLogin" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Yard" EntityType="Self.Yard" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Schedule__ShipID__1BFD2C07" Association="Self.FK__Schedule__ShipID__1BFD2C07">
+          <AssociationSet Name="FK__Schedule__ShipID__4222D4EF" Association="Self.FK__Schedule__ShipID__4222D4EF">
             <End Role="Ship" EntitySet="Ship" />
             <End Role="Schedule" EntitySet="Schedule" />
           </AssociationSet>
-          <AssociationSet Name="FK__Ship__FleetID__1CF15040" Association="Self.FK__Ship__FleetID__1CF15040">
+          <AssociationSet Name="FK__Ship__FleetID__4316F928" Association="Self.FK__Ship__FleetID__4316F928">
             <End Role="Fleet" EntitySet="Fleet" />
             <End Role="Ship" EntitySet="Ship" />
           </AssociationSet>
-          <AssociationSet Name="FK__Shipment__Custom__1FCDBCEB" Association="Self.FK__Shipment__Custom__1FCDBCEB">
+          <AssociationSet Name="FK__Shipment__Custom__440B1D61" Association="Self.FK__Shipment__Custom__440B1D61">
             <End Role="Customer" EntitySet="Customer" />
             <End Role="Shipment" EntitySet="Shipment" />
           </AssociationSet>
-          <AssociationSet Name="FK__Shipment__ShipID__1DE57479" Association="Self.FK__Shipment__ShipID__1DE57479">
+          <AssociationSet Name="FK__Shipment__ShipID__44FF419A" Association="Self.FK__Shipment__ShipID__44FF419A">
             <End Role="Ship" EntitySet="Ship" />
             <End Role="Shipment" EntitySet="Shipment" />
           </AssociationSet>
-          <AssociationSet Name="FK__Shipment__YardID__1ED998B2" Association="Self.FK__Shipment__YardID__1ED998B2">
+          <AssociationSet Name="FK__Shipment__YardID__45F365D3" Association="Self.FK__Shipment__YardID__45F365D3">
             <End Role="Yard" EntitySet="Yard" />
             <End Role="Shipment" EntitySet="Shipment" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DDACModelEntities" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -174,6 +185,7 @@
           <Property Name="Company" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="Contact" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Shipments" Relationship="Self.FK__Shipment__Custom__1FCDBCEB" FromRole="Customer" ToRole="Shipment" />
+          <Property Name="PrepaidCredit" Type="Int32" />
         </EntityType>
         <EntityType Name="Fleet">
           <Key>
@@ -339,6 +351,7 @@
           <EntitySetMapping Name="Customers">
             <EntityTypeMapping TypeName="DDACModelEntities.Customer">
               <MappingFragment StoreEntitySet="Customer">
+                <ScalarProperty Name="PrepaidCredit" ColumnName="PrepaidCredit" />
                 <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Company" ColumnName="Company" />
