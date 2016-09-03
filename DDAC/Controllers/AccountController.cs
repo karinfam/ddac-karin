@@ -11,14 +11,20 @@ namespace DDAC.Controllers
 {
     public class AccountController : Controller
     {
-        public void SignIn()
+        public void SignIn(string redirectUrl)
         {
             // Send an OpenID Connect sign-in request.
-            if (!Request.IsAuthenticated)
-            {
-                HttpContext.GetOwinContext().Authentication.Challenge(new AuthenticationProperties { RedirectUri = "/" },
+            //if (!Request.IsAuthenticated)
+            //{
+            //    HttpContext.GetOwinContext().Authentication.Challenge(new AuthenticationProperties { RedirectUri = "/" },
+            //        OpenIdConnectAuthenticationDefaults.AuthenticationType);
+            //}
+            if (redirectUrl == null)
+                redirectUrl = "/";
+
+            HttpContext.GetOwinContext()
+                .Authentication.Challenge(new AuthenticationProperties { RedirectUri = redirectUrl },
                     OpenIdConnectAuthenticationDefaults.AuthenticationType);
-            }
         }
 
         public void SignOut()
@@ -32,13 +38,23 @@ namespace DDAC.Controllers
 
         public ActionResult SignOutCallback()
         {
+            //if (Request.IsAuthenticated)
+            //{
+            //    // Redirect to home page if the user is authenticated.
+            //    return RedirectToAction("Index", "Home");
+            //}
             if (Request.IsAuthenticated)
             {
-                // Redirect to home page if the user is authenticated.
-                return RedirectToAction("Index", "Home");
+                HttpContext.GetOwinContext().Authentication.SignOut(
+                    OpenIdConnectAuthenticationDefaults.AuthenticationType, CookieAuthenticationDefaults.AuthenticationType);
             }
-
             return View();
+        }
+
+        public void EndSession()
+        {
+            // If AAD sends a single sign-out message to the app, end the user's session, but don't redirect to AAD for sign out.
+            HttpContext.GetOwinContext().Authentication.SignOut(CookieAuthenticationDefaults.AuthenticationType);
         }
     }
 }
