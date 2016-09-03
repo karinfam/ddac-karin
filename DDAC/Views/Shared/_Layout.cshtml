@@ -23,6 +23,13 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li>@Html.ActionLink("Employee Login", "MaerskHome", "Home")</li>
                     <li>@Html.ActionLink("Agent Login", "AgentHome", "Home")</li>
+
+                    @if (User.IsInRole("employee"))
+                    {
+                        <li>@Html.ActionLink("Agent Login", "AgentHome", "Home")</li>
+
+                    }
+
                 </ul>
                 @Html.Partial("_LoginPartial")
                 
