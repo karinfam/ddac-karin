@@ -74,6 +74,10 @@ namespace DDAC.Controllers
                     db.SaveChanges();
                     return RedirectToAction("Index");
                 }
+
+                else {
+                    return Content("This customer does not have enough money! Press back and try again.");
+                }
                             
             }
 
@@ -81,6 +85,7 @@ namespace DDAC.Controllers
             ViewBag.ShipID = new SelectList(db.Ships, "ShipID", "ShipID", shipment.ShipID);
             ViewBag.YardID = new SelectList(db.Yards, "YardID", "YardName", shipment.YardID);
             return View(shipment);
+            
         }
 
         // GET: Shipments/Edit/5

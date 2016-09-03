@@ -51,15 +51,15 @@
             <div class="col-md-10">
                 @Html.DropDownListFor(model => model.Status, new SelectList(
                   new List<Object>{
-                       new { value = 0 , text = "Processing"  },
-                       new { value = 1 , text = "In yard" },
-                       new { value = 2 , text = "On Ship"},
-                       new { value = 3 , text = "Arrived"}
+                       new { value = "Processing" , text = "Processing"  },
+                       new { value ="In yard" , text = "In yard" },
+                       new { value = "On Ship" , text = "On Ship"},
+                       new { value = "Arrived" , text = "Arrived"}
 
                     },
                   "value",
                   "text",
-                   0))
+                   "Processing"))
 
 
 
