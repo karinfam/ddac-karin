@@ -20,6 +20,31 @@ namespace DDAC.Controllers
             var schedules = db.Schedules.Include(s => s.Ship);
             return View(schedules.ToList());
         }
+        // GET: Schedules/DisplayDaily
+        //public ActionResult DisplayDaily(DateTime? SelectedDate)
+        //{
+        //    IQueryable<Schedule> schedules= null;
+        //    //  DateTime date = SelectedDate.GetValueOrDefault();
+        //    if (SelectedDate != null)
+        //    {
+        //        schedules = db.Schedules
+        //                .Where(s => !SelectedDate.HasValue || s.DepartureDateTime == SelectedDate)
+        //                .Include(s => s.Ship);
+        //    }
+        //    else {
+        //        schedules = db.Schedules.Include(s => s.Ship);
+        //    }
+
+        //    return View(schedules.ToList());
+        //}
+
+        public ActionResult DisplayDaily()
+        {
+            var    schedules = db.Schedules.Include(s => s.Ship);
+
+            return View(schedules.ToList());
+        }
+
 
         // GET: Schedules/Details/5
         public ActionResult Details(int? id)

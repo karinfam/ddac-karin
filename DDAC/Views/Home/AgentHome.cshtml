@@ -2,9 +2,52 @@
 @{
     ViewBag.Title = "AgentHome";
 }
-<p class="pagesubheader">Agent Menu</p>
+<p class="page-header">Agent Menu</p>
+
+<div class="btn-group">
+    <div class="btn-group">
+
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+            Schedules
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu">
+            <li>@Html.ActionLink("Daily Schedules", "Index", "Schedules", null)</li>
+        </ul>
+        </div>
+        <div class="btn-group">
+
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                Customer
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+                <li>@Html.ActionLink("New Customer", "Create", "Customers", null)</li>
+                <li>@Html.ActionLink("Customer Overview", "Index", "Customers", null)</li>
+            </ul>
+            </div>
+    <div class="btn-group">
+
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+            Shipment
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu">
+            <li>@Html.ActionLink("New Shipment", "Create", "Shipments", null)</li>
+            <li>@Html.ActionLink("Shipment Status", "Index", "Shipments", null)</li>
+        </ul>
+</div>
+    </div>
 
 
-<p>@Html.ActionLink("Shipping Schedules", "Index", "Schedules", null, new { @class = "btn btn-primary btn-large" }) </p>
-<p>@Html.ActionLink("Shipment Overview", "Index", "Shipments", null, new { @class = "btn btn-primary btn-large" })</p>
+
+@*Remove create/edit/delete for this view*@
+@*<p>@Html.ActionLink("Shipping Schedules", "Index", "Schedules", null, new { @class = "btn btn-primary btn-large" }) </p>
+
+<p>@Html.ActionLink("New Customer", "Create", "Customers", null, new { @class = "btn btn-primary btn-large" })</p>
 <p>@Html.ActionLink("Customer Overview", "Index", "Customers", null, new { @class = "btn btn-primary btn-large" })</p>
+
+<p>@Html.ActionLink("New Shipment", "Create", "Shipments", null, new { @class = "btn btn-primary btn-large" })</p>*@
+
+@*Remove create/edit/delete for this view*@
+@*<p>@Html.ActionLink("Shipment Status", "Index", "Shipments", null, new { @class = "btn btn-primary btn-large" })</p>*@

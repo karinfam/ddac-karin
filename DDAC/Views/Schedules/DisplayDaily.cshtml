@@ -1,0 +1,42 @@
+﻿@model IEnumerable<DDAC.Models.Schedule>
+
+@{
+    ViewBag.Title = "DisplayDaily";
+}
+
+<h2>Display Daily</h2>
+
+<p>
+    Select Date:     @Html.TextBox("dt1", null, new { @class = "date-picker" })
+    <input type="submit" value="Select" />
+
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Destination)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DepartureDateTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ArrivalDateTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ship.MaxLoad)
+        </th>
+        <th></th>
+    </tr>
+
+</table>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript">
+            $(function () {
+                // This will make every element with the class "date-picker" into a DatePicker element
+                $('.date-picker').datepicker();
+            })
+    </script>
+}

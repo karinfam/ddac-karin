@@ -17,6 +17,11 @@ src: url(../fonts/leaguegothic-regular-webfont.woff);
 body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-color:#E1E5E7;
+}
+
+.btn {
+    background-color:#151D38;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -54,11 +59,16 @@ textarea {
 p.pagesubheader {
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     font-size:50px;
+    color: white;
 }
 
 .jumbotron {
-background: linear-gradient(to right, #5A3F37 , #2C7744);
-color: white;
+/*background: linear-gradient(to right, #5A3F37 , #2C7744);*/
+background-image: url(../Images/banner.jpg);
+background-repeat: no-repeat;
+background-size: cover;
+color: black;
+margin-bottom:0px;
 }
 
 .vertical-center {
@@ -68,7 +78,6 @@ align-items:center;
 }
 
 .navbar {
-background-color: transparent;
 border:transparent;
-color: black;
+background-color: #123D59;
 }
