@@ -66,9 +66,15 @@ namespace DDAC.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Shipments.Add(shipment);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                Customer cust = db.Customers.Find(shipment.CustomerID);
+                if (cust.PrepaidCredit > shipment.InsuredValue)
+                {
+                    cust.PrepaidCredit = cust.PrepaidCredit - (int)shipment.InsuredValue;
+                    db.Shipments.Add(shipment);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                            
             }
 
             ViewBag.CustomerID = new SelectList(db.Customers, "CustomerID", "Name", shipment.CustomerID);
