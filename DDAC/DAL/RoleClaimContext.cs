@@ -12,3 +12,4 @@ namespace DDAC.DAL
         public RoleClaimContext() : base("RoleClaimContext") { }
 
     }
+}
