@@ -3,7 +3,7 @@
     ViewBag.Title = "AgentHome";
 }
 <p class="page-header">Agent Menu</p>
-<div class="jumbotron" style="background-color:#315F80 ">
+<div class="jumbotron container" style="background-image:url(../Images/kl.jpg); ">
 <div class="btn-group">
     <div class="btn-group">
 
@@ -12,7 +12,7 @@
             <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" role="menu">
-            <li>@Html.ActionLink("Daily Schedules", "Index", "Schedules", null)</li>
+            <li>@Html.ActionLink("Daily Schedules", "Index", "Schedules", null, new { @class = "" })</li>
 @*            <li>@Html.ActionLink("Daily Schedules", "Index", "Schedules", null, new { @class = "btn btn-large" })</li>*@
         </ul>
     </div>
