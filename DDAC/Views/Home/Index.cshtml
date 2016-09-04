@@ -6,7 +6,8 @@
     <p class="page-header text-center">WELCOME TO MAERSK</p>
     <div class="container-fluid text-center color-segment">
         <p class="pagesubheader">Welcome</p>
-        @Html.ActionLink("Sign In", "Account", "Home", null, new { @class = "btn btn-primary btn-large" })
+        @Html.Partial("_LoginPartial")
+        @*@Html.ActionLink("Sign In", "SignIn", "Account", null, new { @class = "btn btn-primary btn-large" })*@
     </div>
 
     
