@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDAC", "DDAC\DDAC.csproj", "{FC4D7FC3-7D3C-4E86-9D6F-3EDF2633D41F}"
 EndProject
+Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "ModelingProject1", "ModelingProject1\ModelingProject1.modelproj", "{138A4846-716B-4BA4-AB63-274FE0D86D7B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{FC4D7FC3-7D3C-4E86-9D6F-3EDF2633D41F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC4D7FC3-7D3C-4E86-9D6F-3EDF2633D41F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC4D7FC3-7D3C-4E86-9D6F-3EDF2633D41F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{138A4846-716B-4BA4-AB63-274FE0D86D7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{138A4846-716B-4BA4-AB63-274FE0D86D7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{138A4846-716B-4BA4-AB63-274FE0D86D7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{138A4846-716B-4BA4-AB63-274FE0D86D7B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

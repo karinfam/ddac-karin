@@ -224,9 +224,11 @@
     <Compile Include="AuthorizeAttribute.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
+    <Compile Include="Controllers\FleetsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SchedulesController.cs" />
     <Compile Include="Controllers\ShipmentsController.cs" />
+    <Compile Include="Controllers\ShipsController.cs" />
     <Compile Include="Controllers\UserProfileController.cs" />
     <Compile Include="Controllers\YardsController.cs" />
     <Compile Include="DAL\RoleClaimContext.cs" />
@@ -329,6 +331,8 @@
     <Content Include="Content\bootstrap-datepicker.min.css.map" />
     <Content Include="Content\bootstrap-datepicker.css.map" />
     <Content Include="ClassDiagram1.cd" />
+    <Content Include="ClassDiagram2.cd" />
+    <Content Include="ClassDiagram3.cd" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -449,6 +453,16 @@
     <Content Include="Views\Customers\Details.cshtml" />
     <Content Include="Views\Customers\Edit.cshtml" />
     <Content Include="Views\Customers\Index.cshtml" />
+    <Content Include="Views\Fleets\Create.cshtml" />
+    <Content Include="Views\Fleets\Delete.cshtml" />
+    <Content Include="Views\Fleets\Details.cshtml" />
+    <Content Include="Views\Fleets\Edit.cshtml" />
+    <Content Include="Views\Fleets\Index.cshtml" />
+    <Content Include="Views\Ships\Create.cshtml" />
+    <Content Include="Views\Ships\Delete.cshtml" />
+    <Content Include="Views\Ships\Details.cshtml" />
+    <Content Include="Views\Ships\Edit.cshtml" />
+    <Content Include="Views\Ships\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

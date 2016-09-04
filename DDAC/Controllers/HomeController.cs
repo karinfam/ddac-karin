@@ -26,12 +26,14 @@ namespace DDAC.Controllers
 
             return View();
         }
+        [Authorize(Roles = "employee")]
         public ActionResult MaerskHome()
         {
             ViewBag.Message = "Maersk login page.";
 
             return View();
         }
+        [Authorize(Roles = "agent")]
         public ActionResult AgentHome()
         {
             ViewBag.Message = "Agent login page.";
