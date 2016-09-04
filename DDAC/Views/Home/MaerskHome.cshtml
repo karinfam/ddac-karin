@@ -6,7 +6,51 @@
 <p class="page-header">Maersk Employee Menu</p>
 
 
-<p>@Html.ActionLink("Shipping Schedules", "Index", "Schedules", null, new { @class = "btn btn-primary btn-large" }) </p>
-<p>@Html.ActionLink("Yards Overview", "Index", "Yards", null, new { @class = "btn btn-primary btn-large" })</p>
-<p>@Html.ActionLink("Shipment Overview", "Index", "Shipments", null, new { @class = "btn btn-primary btn-large" })</p>
+<div class="jumbotron simplebg">
+    <div class="btn-group">
+        <div class="btn-group">
 
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                Schedules
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+                <li>@Html.ActionLink("Daily Schedules", "Index", "Schedules", null, new { @class = "" })</li>
+                <li>@Html.ActionLink("Create Schedules", "Create", "Schedules", null, new { @class = "" })</li>
+            </ul>
+        </div>
+
+        <div class="btn-group">
+
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                Yards
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+                <li>@Html.ActionLink("Yard Overview", "Index", "Yards", null, new { @class = "" })</li>
+            </ul>
+        </div>
+
+        <div class="btn-group">
+
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                Shipment
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+                <li>@Html.ActionLink("Shipment Overview", "Index", "Shipments", null, new { @class = "" })</li>
+            </ul>
+        </div>
+        <div class="btn-group">
+
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                Fleets
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+                <li>@Html.ActionLink("Fleet Overview", "Index", "Fleets", null, new { @class = "" })</li>
+            </ul>
+        </div>
+
+    </div>
+</div>
