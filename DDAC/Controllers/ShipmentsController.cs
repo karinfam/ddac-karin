@@ -67,6 +67,7 @@ namespace DDAC.Controllers
             if (ModelState.IsValid)
             {
                 Customer cust = db.Customers.Find(shipment.CustomerID);
+                Ship sp = db.Ships.Find(shipment.ShipID);
                 if (cust.PrepaidCredit > shipment.InsuredValue)
                 {
                     cust.PrepaidCredit = cust.PrepaidCredit - (int)shipment.InsuredValue;
@@ -75,7 +76,8 @@ namespace DDAC.Controllers
                     return RedirectToAction("Index");
                 }
 
-                else {
+                      else
+                {
                     return Content("This customer does not have enough money! Press back and try again.");
                 }
                             

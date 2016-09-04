@@ -60,7 +60,7 @@ namespace DDAC.Controllers
             }
             return View(schedule);
         }
-
+        [Authorize(Roles ="employee")]
         // GET: Schedules/Create
         public ActionResult Create()
         {
@@ -87,6 +87,7 @@ namespace DDAC.Controllers
         }
 
         // GET: Schedules/Edit/5
+        [Authorize(Roles = "employee")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -105,6 +106,7 @@ namespace DDAC.Controllers
         // POST: Schedules/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize(Roles = "employee")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "ScheduleID,Destination,DepartureDateTime,ArrivalDateTime,ShipID")] Schedule schedule)
@@ -120,6 +122,7 @@ namespace DDAC.Controllers
         }
 
         // GET: Schedules/Delete/5
+        [Authorize(Roles = "employee")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -135,6 +138,7 @@ namespace DDAC.Controllers
         }
 
         // POST: Schedules/Delete/5
+        [Authorize(Roles = "employee")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

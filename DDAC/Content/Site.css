@@ -72,11 +72,14 @@ p.pagesubheader {
 
 .jumbotron {
 /*background: linear-gradient(to right, #5A3F37 , #2C7744);*/
-background-image: url(../Images/banner.jpg);
 background-repeat: no-repeat;
 background-size: cover;
 color: black;
 margin-bottom:0px;
+}
+
+.banner {
+background-image: url(../Images/banner.jpg);
 }
 
 .vertical-center {
