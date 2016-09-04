@@ -26,6 +26,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <WebProject_DirectoryAccessLevelKey>1</WebProject_DirectoryAccessLevelKey>
+    <ApplicationInsightsResourceId>/subscriptions/d9091df4-0d43-456d-a6f7-5cfdfc2de784/resourcegroups/rg-ddac/providers/microsoft.insights/components/karin-ddac</ApplicationInsightsResourceId>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -463,6 +464,7 @@
     <Content Include="Views\Ships\Details.cshtml" />
     <Content Include="Views\Ships\Edit.cshtml" />
     <Content Include="Views\Ships\Index.cshtml" />
+    <Content Include="Service References\Application Insights\ConnectedService.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
