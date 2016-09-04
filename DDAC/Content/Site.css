@@ -66,8 +66,9 @@ textarea {
 p.pagesubheader {
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     font-size:50px;
-    color: white;
+    color: black;
 }
+
 
 .jumbotron {
 /*background: linear-gradient(to right, #5A3F37 , #2C7744);*/
