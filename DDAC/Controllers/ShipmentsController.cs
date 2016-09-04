@@ -67,7 +67,6 @@ namespace DDAC.Controllers
             if (ModelState.IsValid)
             {
                 Customer cust = db.Customers.Find(shipment.CustomerID);
-                Ship sp = db.Ships.Find(shipment.ShipID);
                 if (cust.PrepaidCredit > shipment.InsuredValue)
                 {
                     cust.PrepaidCredit = cust.PrepaidCredit - (int)shipment.InsuredValue;
