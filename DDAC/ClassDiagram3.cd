@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="DDAC.Controllers.CustomersController">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACARAACAAAAAAAAAAAEAAEACAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\CustomersController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DDAC.Controllers.SchedulesController">
+    <Position X="11.25" Y="0.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACARAACAAAAAAAAAAAEAAEACAAGAAAAAAAA=</HashCode>
+      <FileName>Controllers\SchedulesController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DDAC.Controllers.ShipmentsController">
+    <Position X="2.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACARAACAAAAAAAAAAAEAAEACAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\ShipmentsController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DDAC.Controllers.YardsController">
+    <Position X="2.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACARAACAAAAAAAAAAAEAAEACAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\YardsController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DDAC.Models.Customer">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgABAACAAAAAQAEAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Models\Customer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DDAC.Models.Fleet">
+    <Position X="5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAECAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Fleet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DDAC.Models.Schedule">
+    <Position X="9" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAAAAAIAQAAAAACAAAAkAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Schedule.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DDAC.Models.Ship">
+    <Position X="5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAgAAAABAAACAAAAAAAEAAAAAAAAAAAAACAAA=</HashCode>
+      <FileName>Models\Ship.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DDAC.Models.Shipment">
+    <Position X="1" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAEAAAAEAAIAAAAAABAAAAAAESCAAAgEAQAAAAAAAAA=</HashCode>
+      <FileName>Models\Shipment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DDAC.Models.Yard">
+    <Position X="1" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAIAABAAAAAAAAAACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Yard.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DDAC.Controllers.FleetsController">
+    <Position X="7.5" Y="7.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACARAACAAAAAAAAAAAEAAEACAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\FleetsController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DDAC.Controllers.ShipsController">
+    <Position X="7.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACARAACAAAAAAAAAAAEAAEACAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\ShipsController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
