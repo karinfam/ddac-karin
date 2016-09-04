@@ -79,6 +79,10 @@ margin-bottom:0px;
 min-height: 600px;
 }
 
+.simplebg {
+    background-image:url(../Images/kl.jpg);
+}
+
 .banner {
 background-image: url(../Images/banner.jpg);
 }
