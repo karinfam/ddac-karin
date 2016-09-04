@@ -9,7 +9,9 @@ namespace DDAC
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
+                      "~/Scripts/jquery-{version}.js",
+                "~/Scripts/jquery-ui-{version}.js",
+                "~/Scripts/AadPickerLibrary.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
@@ -27,7 +29,8 @@ namespace DDAC
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Scripts/bootstrap-datepicker.css",
-                      "~/Content/site.css"));
+                       "~/Content/site.css",
+                "~/Content/themes/base/jquery-ui.css"));
         }
     }
 }
